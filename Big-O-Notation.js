@@ -113,3 +113,90 @@ function addUpToEasy(n){
 /*
 The number of operations for this function is (eventually) bounded by a multiple of n(say, 10n). This is why THIS function is considered to have O(n)
 */
+
+
+// Example 3 - Write a function that counts up and down.
+
+function countUpAndDown(n){
+    console.log("Going up!");
+    for(let i = 0; i < n; i++) {
+        console.log(i);
+    }
+    console.log("At the top!\nGoing down...");
+    for(let j= n-1; j > 0; j--) {
+        console.log(j);
+    }
+    console.log("Back down. Bye!");
+}
+
+console.log(countUpAndDown(3))
+
+/*
+This will print the following:
+Going up!
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+At the top!
+Going down...
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+Back down. Bye!
+
+This is still considered O(n) even though it has 2 loops:
+ - Loop #1
+    for(let i = 0; i < n; i++) {
+        console.log(i);
+
+- Loop #2
+    for(let j= n-1; j > 0; j--) {
+        console.log(j);
+*/
+
+// Example 4 - Write a function that prints all the pairs of a given number. (This contains a nested loop)
+
+function printAllPairs(n){
+    for(var i = 0; i < n; i++) {
+        for(var j = 0; j < n; j++) {
+            console.log(i, j)
+        }
+    }
+}
+
+console.log(printAllPairs(3))
+/*
+This will print out the following:
+0 0
+0 1
+0 2
+0 3
+1 0
+1 2
+1 3
+2 0
+etc...
+3 3
+
+O(n) operation inside of an O(n) operation is O(n^2).
+    - This is not linear!
+    - ENGROSS (print) the runtime is roughly proportionate.
+    - This is proportionate to n-squared.
+
+So as N grows, the runtime grows even larger, grows and times and larger roughly.
+
+*/
