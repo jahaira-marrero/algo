@@ -71,3 +71,45 @@ function addUpToEasy(n){
         this is 1 assignment
 As "n" grows, the operations grow in proportion.
 */
+
+/*-----------------------------------------------------------------------------
+- Big O Notation is a way to formalize fuzzy counting. Keep in mind that we're talking about "worst case scenarios" for runtime.
+- It allows us to talk formally about how the runtime of an alogrithm grows as the inputs grow.
+- We only care about the broad trends.
+
+An algorithm is O(f(n)), if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases.
+    f(n) = function with an input of "n"
+
+    - f(n) could  be linear (f(n)=n)
+    - f(n) could be quadratic (f(n)=n^2)
+    - f(n) could be constant(f(n)=1)
+    - f(n) could be something entirely different!
+
+Example 1 - 
+*/
+
+function addUpToCleaner(n) {
+    return n * (n + 1) / 2
+}
+
+/*
+This function will always have 3 operations:
+    - multiplication
+    - addition
+    - division
+BUT no matter what "n" is, the runtime will not change. This is why we call it O(1).
+
+Example 2 - 
+*/
+
+function addUpToEasy(n){
+    let total = 0
+    for (let i = 1; i <= n; i++) {
+        total += 1;
+    }
+    return total;
+}
+
+/*
+The number of operations for this function is (eventually) bounded by a multiple of n(say, 10n). This is why THIS function is considered to have O(n)
+*/
