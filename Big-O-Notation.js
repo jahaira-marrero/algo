@@ -255,3 +255,26 @@ function subtotals(array) {
 }
 
 // O(n^2)
+
+// ----------------------------------------------------
+
+// Create a function that sums all the items in the array
+
+function sum(arr) {
+    let total = 0;
+    for(let i = 0; i < arr.length; i++) {
+        total += arr[i];
+    }
+    return total;
+}
+
+
+// Create a function that doubles the items in an array into a new array.
+
+function double(arr) {
+    newArr = [];
+    for(let i = 0; i < arr.length, i++) {
+        newArr.push( 2 * arr[i]);
+    } 
+    return newArr;
+}
