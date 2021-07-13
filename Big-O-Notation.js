@@ -278,3 +278,109 @@ function double(arr) {
     } 
     return newArr;
 }
+
+// --------------------------------------------------------------------------------------
+// Space Complexity
+/*
+How much additional memoery do we need to allocate in order to run the code in our algorithm?
+As "n" grows, as we're approaching infinity, the size of the input itself which is "n" is going to increase.
+
+What about inputs?
+- Sometimes you'll hear the term auxiliary space complexity to refer to space required by the algorithm, not including space taken up by the inputs.
+- We want to focus on te repercussions that has inside the algorithm, so technically this be focused on auxiliary space complexity (what happens inside the algo).
+
+RULES OF THUMB
+- Most primitive (booleans, numbers, undefined, null) are constant space. It doesn't matter what the size of the input is, it takes up the same amount  of space.
+- Strings require O(n) space (where "n" is the string length). So if "n" is the length of the string and we have an input of 50 characters, then the string takes up 50x more space than a single character.
+- Reference types are generally O(n), where "n" is the length (for arrays) or the number of keys (for objects). So if the length if an array is 4, it takes up twice as much space one that has the length of 2.
+
+*/
+
+// Create a function that sums all the terms in the array.
+
+function sum(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length, i++) {
+        total += arr[i];
+    }
+    return total;
+}
+
+// let total = 0 : represents one number
+// let i = 0 (in the loop): represents another number
+// The space for the "variable" is already there. It doesn't matter the size of the array is of "n" (in this case it's 0). It doesn't have an impact on the space that's taken up because we only have these 2 variables and they exist no matter what.
+    // We're not adding new variables based on the length, we're adding TO the variable.
+    // This means we have constant space.
+// O(1) space -> no matter the size
+
+//  Create a function that doubles the items in an array into a new array.
+
+function double(arr) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]);
+    }
+    return newArr
+}
+
+/*
+The space taken up is directly proportionate to "n" because it creates a new array the same length as arr ("n").
+
+O(n) 
+*reduced from O(n + 2)
+    1. let newArr = []
+    2. let i = 0
+*/
+
+// QUIZ --------------------------------------------------------------------------
+
+// Determine the space complexity for the following function  
+
+function logUpTo(n) {
+    for (var i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+// O(n)
+
+function logAtMost10(n) {
+    for (var i = 1; i <= Math.min(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+// O(1)
+
+function logAtMost10(n) {
+    for (var i = 1; i <= Math.min(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+// O(1)
+
+function onlyElementsAtEvenIndex(array) {
+    var newArray = Array(Math.ceil(array.length / 2));
+    for (var i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            newArray[i / 2] = array[i];
+        }
+    }
+    return newArray;
+}
+
+// O(n)
+
+function subtotals(array) {
+    var subtotalArray = Array(array.length);
+    for (var i = 0; i < array.length; i++) {
+        var subtotal = 0;
+        for (var j = 0; j <= i; j++) {
+            subtotal += array[j];
+        }
+        subtotalArray[i] = subtotal;
+    }
+    return subtotalArray;
+}
+
+// O(n)
