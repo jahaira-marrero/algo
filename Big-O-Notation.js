@@ -273,7 +273,7 @@ function sum(arr) {
 
 function double(arr) {
     newArr = [];
-    for(let i = 0; i < arr.length, i++) {
+    for(let i = 0; i < arr.length; i++) {
         newArr.push( 2 * arr[i]);
     } 
     return newArr;
@@ -300,7 +300,7 @@ RULES OF THUMB
 
 function sum(arr) {
     let total = 0;
-    for (let i = 0; i < arr.length, i++) {
+    for (let i = 0; i < arr.length; i++) {
         total += arr[i];
     }
     return total;
@@ -332,7 +332,7 @@ O(n)
     2. let i = 0
 */
 
-// QUIZ --------------------------------------------------------------------------
+// QUIZ #3 --------------------------------------------------------------------------
 
 // Determine the space complexity for the following function  
 
@@ -384,3 +384,38 @@ function subtotals(array) {
 }
 
 // O(n)
+
+// ----------------------------------------------------------------------------------
+/* LOGARTHIMS
+The inverse of exponentiation. Just like division ans multiplication are a pair, logarithms and exponens exponentiation are a pair.
+    Ex: log base 2 of 8 = 3
+        log2(8) = 3
+    What this is asking is: 2 to what power is equal to 8?
+        2 * 2 * 2 = 8
+        There are three 2s, so the answer is 3.
+
+    Formula:
+    log2(value) = exponent -->(inversed) 2^exponent = value
+
+    There are others bases that are used but these are most common:
+        log2
+        log3
+        log10
+        loge
+
+We are going to omit the #2 in log for a few reasons:
+    - it's annoying to keep writing it
+    - if we're comparing the graph of a:
+        constant
+        quadratic time
+        log time
+        it won't matter if it's log base 2, 3, etc. We care about the general trend
+
+It's not a mathematical operation on it's own. You need to have a base in order to have the log of a number.
+    log === log2
+
+[Rule of Thumb]
+    The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
+
+*/
+
