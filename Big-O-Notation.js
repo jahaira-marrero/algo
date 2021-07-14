@@ -417,5 +417,27 @@ It's not a mathematical operation on it's own. You need to have a base in order 
 [Rule of Thumb]
     The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
 
+    Example 1:
+
+    8/2 = 2
+    4/2 = 2
+    2/2 = 1
+
+    1 is less than or equal to 1 so our answer is log(8)=3
+
+    Example 2:
+
+    25/2 = 12.5
+    12.5/2 = 6.25
+    6.25/2 = 3.125 
+    3.125/2 = 1.5625
+    1.5625/2 = 0.78125
+
+    0.78125 is less than or equal to 1 so our answer is log(25) ≈4.64
+
+Whis is this important?
+    - Certain searching algorithms have logarithmic time complexity.
+    - Efficient sorting algoriths involve logarithms.
+    - Recursion sometimes involves logarithmic space complexity.
 */
 
